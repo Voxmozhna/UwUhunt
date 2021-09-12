@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "UwUhunter",
+    "version": "0.2",
+  
+    "description": "Why not hunt the UwU?",
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.opensea.io/collection/uwucrew"],
+        "js": ["uwuhunt.js"]
+      }
+    ]
+  }
