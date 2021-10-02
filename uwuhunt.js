@@ -10,7 +10,7 @@ document.addEventListener('scroll', function(){
             fetch(`https://rt.quantumly.dev/collectable/score/uwucrew/${uwuId}`)
                 .then((r) => r.text())
                 .then((text) => {
-                    span.innerHTML = `Rarity rank #${text.split('-')[0]}`;
+                    span.innerHTML = `Rarity rank #${text.replace(/\"/g, '').split('-')[0]}`;
                 });
             span.setAttribute("class", "UwU"); 
             span.style.color = "#FF66B6";
