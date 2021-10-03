@@ -7,7 +7,11 @@ document.addEventListener('scroll', function(){
             let pfpImage = el.getElementsByClassName("Asset--anchor")[0]; 
             src = pfpImage.href;
             let uwuId = src.substring(src.lastIndexOf('/') + 1)
-            span.innerHTML = "Rarity: #" + uwuId;
+            fetch(`https://rt.quantumly.dev/collectable/score/uwucrew/${uwuId}`)
+                .then((r) => r.text())
+                .then((text) => {
+                    span.innerHTML = `Rarity rank #${text.replace(/\"/g, '').split('-')[0]}`;
+                });
             span.setAttribute("class", "UwU"); 
             span.style.color = "#FF66B6";
         }
